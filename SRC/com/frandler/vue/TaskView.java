@@ -18,9 +18,9 @@ public class TaskView {
 		System.out.print("Please add a new task: ");
 		taskString = mscanner.nextLine();
 		var res = tskController.addTask(taskString);
-		if(res!="") {
+		if(res!="") 
 			System.err.println(res);
-		}
+		
 	}
 	
 	
@@ -32,22 +32,17 @@ public class TaskView {
 		// TODO Auto-generated method stub
 		System.out.print("Please enter the task ID: ");
 		int idTaskInt = mscanner.nextInt();
-		//var answer = tskController.getTaskById(idTaskInt);
-		
-		if(tskController.getTaskById(idTaskInt) != null) {
+		if(tskController.getTaskById(idTaskInt) == true) 
 			System.out.println(tskController.getTaskById(idTaskInt));
-		}	
+			
 		
 	}
 	
 	public void removeTaskById() {
 		// TODO Auto-generated method stub
-		System.out.print("------------------------------------------\nPlease enter the ID of task : ");
+		System.out.print("------------------------------------------\nPlease enter ID of task : ");
 		int idTaskInt = mscanner.nextInt();
-		if (idTaskInt<0) {
-			System.err.println("Tache ("+idTaskInt+ ") ivalide");
-		}
-		tskController.removeTaskById(idTaskInt);
+	 		tskController.removeTaskById(idTaskInt);
 	}
 	
 	public void getMenu() {

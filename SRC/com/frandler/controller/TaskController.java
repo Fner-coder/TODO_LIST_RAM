@@ -23,11 +23,27 @@ public class TaskController {
 		return tskmodel.getTasks();
 	 }
 	 
-	 public String getTaskById(int tmpId) {
-		 return tskmodel.getTaskById(tmpId);
+	 public boolean getTaskById(int tmpId) {
+		 String getTaskString = tskmodel.getTaskById(tmpId);
+		 if (getTaskString != null) {
+			 System.out.println("\n------------- TACHE RECHERCHEE------------------------");
+			 System.out.println("Tache("+tmpId+ ") -> "+ getTaskString+"\n------------------------------------------------------");
+		 }
+		 else {
+			System.err.println("Tache introuvable!");
+		}
+		 return false;
 	}
 	 
-	 public void removeTaskById(int tmpId) {
-		tskmodel.removeTaskById(tmpId);
+	 public boolean removeTaskById(int tmpId) {
+		 boolean getTaskString = tskmodel.removeTaskById(tmpId);
+		 if (getTaskString) 
+			 System.out.println("Tache: "+tmpId+ "-> "+ getTaskString+" supprimee \n------------------------------------------------------");
+		 else 
+			System.err.println("Tache non trouvee!");
+		
+		 return false;
+		 
 	}
 }
+
